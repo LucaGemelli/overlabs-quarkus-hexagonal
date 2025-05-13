@@ -2,6 +2,7 @@ package com.microservices.quarkus.config.bootloader;
 
 import javax.enterprise.inject.Produces;
 
+import com.microservice.quarkus.application.outbound.ExternalPostPort;
 import com.microservice.quarkus.application.ports.api.LoanAPIService;
 import com.microservice.quarkus.application.service.LoanAPIServiceImpl;
 import com.microservice.quarkus.domain.model.loan.LoanFactory;
@@ -15,7 +16,7 @@ public class AppContext {
     }
 
     @Produces
-    public LoanAPIService loanAPIService(LoanRepository loanRepository, EventBus eventBus, LoanFactory loanFactory) {        
-        return new LoanAPIServiceImpl(loanRepository, loanFactory, eventBus);
+    public LoanAPIService loanAPIService(LoanRepository loanRepository, EventBus eventBus, LoanFactory loanFactory, ExternalPostPort externalPostPort) {
+        return new LoanAPIServiceImpl(loanRepository, loanFactory, eventBus, externalPostPort);
     }
 }

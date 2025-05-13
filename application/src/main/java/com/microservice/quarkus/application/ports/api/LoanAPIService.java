@@ -2,17 +2,20 @@ package com.microservice.quarkus.application.ports.api;
 
 import java.util.List;
 
+import com.microservice.quarkus.application.outbound.PostDTO;
 import com.microservice.quarkus.domain.model.loan.Loan;
 
 public interface LoanAPIService {
 
-    public Loan getLoan(String id);
+    Loan getLoan(String id);
 
-    public List<Loan> getAllLoans();
+    List<Loan> getAllLoans();
     
-    public void deleteLoan(String id);
+    void deleteLoan(String id);
 
-    public void create(Loan prop);
+    void create(Loan prop);
 
-    public void update(Loan prop);
+    void update(Loan prop);
+
+    List<PostDTO> fetchExternalPosts();
 }

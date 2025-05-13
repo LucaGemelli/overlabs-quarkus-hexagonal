@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.enterprise.context.ApplicationScoped;
 
+import com.microservice.quarkus.application.outbound.PostDTO;
 import com.microservice.quarkus.application.ports.api.LoanAPIService;
 import com.microservice.quarkus.domain.model.loan.Loan;
 
@@ -38,4 +39,9 @@ public class LoanApiServiceDefault implements LoanAPIService {
         // TODO Auto-generated method stub
 
     }
+
+    @Override
+    public List<PostDTO> fetchExternalPosts() {
+        return null;
+    };
 }

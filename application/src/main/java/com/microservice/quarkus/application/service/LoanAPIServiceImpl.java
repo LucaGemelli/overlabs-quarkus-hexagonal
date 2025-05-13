@@ -2,6 +2,8 @@ package com.microservice.quarkus.application.service;
 
 import java.util.List;
 
+import com.microservice.quarkus.application.outbound.ExternalPostPort;
+import com.microservice.quarkus.application.outbound.PostDTO;
 import com.microservice.quarkus.application.ports.api.LoanAPIService;
 import com.microservice.quarkus.domain.model.loan.Loan;
 import com.microservice.quarkus.domain.model.loan.LoanFactory;
@@ -17,6 +19,7 @@ public class LoanAPIServiceImpl implements LoanAPIService {
     LoanRepository loanRepository;
     LoanFactory loanFactory;
     EventBus eventBus;
+    ExternalPostPort externalPostPort;
 
     public Loan getLoan(String id) {
         log.debug("Getting loan {}", id);
@@ -52,5 +55,11 @@ public class LoanAPIServiceImpl implements LoanAPIService {
         log.debug("Updating loan: {}", loan);
 
         loanRepository.update(loan);
+    }
+
+    @Override
+    public List<PostDTO> fetchExternalPosts() {
+        log.debug("Fetching external posts via ExternalPostPort");
+        return externalPostPort.fetchAllPosts();
     }
 }
