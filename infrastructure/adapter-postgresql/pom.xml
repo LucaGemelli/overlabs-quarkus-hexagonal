@@ -21,10 +21,10 @@
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
-        <!-- Flyway specific dependencies -->
+        <!-- Liquibase specific dependencies -->
         <dependency>
             <groupId>io.quarkus</groupId>
-            <artifactId>quarkus-flyway</artifactId>
+            <artifactId>quarkus-liquibase</artifactId>
         </dependency>
 
         <!-- Hibernate ORM specific dependencies -->

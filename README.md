@@ -17,10 +17,10 @@ Maven Multi-module project to illustrate how to structure a project based on an 
 
 ### PostgreSQL adapter
 
-| Technology | Purpose |
-| ---------- |----------|
+| Technology                                                           | Purpose |
+|----------------------------------------------------------------------|----------|
 | [Hibernate panache](https://quarkus.io/guides/hibernate-orm-panache) | Database access |
-| [Flyway](https://flywaydb.org/) | To load database at start |
+| [Liquibase](https://www.liquibase.com/)                              | To load database at start |
 
 ### DynamoDB adapter
 
